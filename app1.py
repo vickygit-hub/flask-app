@@ -30,12 +30,12 @@ app = Flask(__name__)
 def home():
 	return render_template("index.html", name="vikas 😎 ")
 
-app.route('/submit', methods=['post'])
+@app.route('/submit', methods=['POST'])
 def submit():
       form_data = dict(request.form)
       collection.insert_one(form_data)
       return form_data
 
 if __name__ == "__main__":
-	app.run(host = "0.0.0.0", port=6000, debug=True)
+	app.run(host = "0.0.0.0", port=5000, debug=True)
 
