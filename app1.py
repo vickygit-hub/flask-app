@@ -32,9 +32,11 @@ def home():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-      form_data = dict(request.form)
-      collection.insert_one(form_data)
-      return form_data
+    print("ok submitted ")
+    form_data = dict(request.form) 
+    result = collection.insert_one(form_data)
+    form_data["_id"] = str(result.inserted_id) 
+    return form_data
 
 if __name__ == "__main__":
 	app.run(host = "0.0.0.0", port=5000, debug=True)
