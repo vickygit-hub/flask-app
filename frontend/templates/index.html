@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask practice</title>
+</head>
+<body>
+  <h1>Hello, flask template is ready for working 👍</h1>
+  <p>Welcome {{ name }}</p>
+
+  <form action="/submit" method="POST">
+    <p>Name:</p>
+    <input type="text" name="name" placeholder="Enter your full name">
+
+    <p>Password:</p>
+    <input type="password" name="password" placeholder="Enter password">
+
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/get_data"><button>view data</button></a>
+</body>
+</html>
